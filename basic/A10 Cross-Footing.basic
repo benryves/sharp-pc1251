@@ -1,0 +1,58 @@
+   10 "A": CLEAR : WAIT : USING : LPRINT "* DATA LIST *"
+   20 INPUT "VERTICAL=";A
+   30 INPUT "HORIZONTAL=";B
+   40 DIM B(A-1,B-1)
+   50 FOR I=1 TO A
+   60 FOR J=1 TO B
+   70 PAUSE "A(";USING "###";I;",";J;")"
+   80 INPUT B(I-1,J-1)
+   90 LPRINT "A(";USING "###";I;",";J;")=";USING " CLEAR #########";B(I-1,J-1)
+  100 NEXT J: NEXT I
+  110 GOTO 505
+  120 "B": WAIT : USING : LPRINT "* REVISED DATA *"
+  130 INPUT "REVISION POSITION=";C$:Z=LEN C$:X$=RIGHT$ (C$,Z-2):Y=VAL X$: GOTO 145
+  140 GOTO 130
+  145 IF Y<1 GOTO 130
+  150 W=Z-LEN STR$ Y-3
+  160 IF W<0 GOTO 130
+  170 IF MID$ (C$,Z-W,1)<>"," LET W=W-1: GOTO 160
+  180 V$=RIGHT$ (C$,W):U=VAL V$: IF U<1 GOTO 130
+  200 PAUSE B(Y-1,U-1)
+  210 INPUT B(Y-1,U-1)
+  220 LPRINT "A(";USING "###";Y;",";U;")=";USING "##########";B(Y-1,U-1)
+  230 GOTO 130
+  240 "C": WAIT : USING : LPRINT "* TOTAL PERCENTAGE *"
+  250 LPRINT "POSITION      TTL:  %"
+  260 LPRINT "-----+-----------+------"
+  270 D=0
+  280 FOR I=0 TO A-1
+  290 FOR J=0 TO B-1
+  300 D=D+B(I,J)
+  310 NEXT J: NEXT I
+  320 FOR J=0 TO B-1
+  330 E=0
+  340 FOR I=0 TO A-1
+  350 E=E+B(I,J)
+  360 NEXT I
+  370 F=INT (E/D*€5+0.5)/€3
+  380 LPRINT "H";USING "####";J+1;":";USING "###########";E;":";USING "###.##";F
+  390 NEXT J
+  400 FOR I=0 TO A-1
+  410 G=0
+  420 FOR J=0 TO B-1
+  430 G=G+B(I,J)
+  440 NEXT J
+  450 H=INT (G/D*€5+0.5)/€3
+  460 LPRINT "V";USING "####";I+1;":";USING "###########";G;":";USING "###.##";H
+  470 NEXT I
+  480 LPRINT "------------------------"
+  490 LPRINT "* GTTL *"
+  500 LPRINT USING "###########";D
+  505 "X": LPRINT "": LPRINT "": LPRINT ""
+  510 END 
+  520 "Z": PAUSE "TAPE SET UP!"
+  530 INPUT "DATA IN=1/OUT=2?";K: IF (K=1)+(K=2)=1 GOTO 550
+  540 BEEP 3: GOTO 530
+  550 IF K=2 PRINT #"CF";A,B: PRINT #"CF-DATA";B(*): END 
+  560 CLEAR : INPUT #"CF";A,B: DIM B(A-1,B-1): INPUT #"CF-DATA";B(*)
+  570 END 

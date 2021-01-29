@@ -1,0 +1,21 @@
+   10 "A":J=0: GOTO 30
+   20 "B":J=1
+   30 DEGREE : INPUT "X0= ";A,"Y0= ";B,"R= ";C
+   40 INPUT "X1= ";D,"Y1= ";E
+   50 IF J<>0 INPUT "A= ";H:H=DEG H: GOTO 90
+   60 INPUT "X2= ";F,"Y2= ";G
+   70 X=F-D:Y=G-E: GOSUB 500
+   80 H=X
+   90 X=A-D:Y=B-E: GOSUB 500
+  100 K=W*SIN (X-H)
+  110 L=ACS (K/C)
+  120 M=H-90-L:N=H-90+L
+  130 GOSUB 600
+  140 PRINT USING "######.####";"P:";O;P
+  150 M=N: GOSUB 600
+  160 PRINT "Q:";O;P
+  170 END
+  500 W=√(X*X+Y*Y)
+  510 X=ACS (X/W): IF Y<0 LET X=360-X
+  520 RETURN
+  600 O=A+C*COS M:P=B+C*SIN M: RETURN
