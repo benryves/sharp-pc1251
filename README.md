@@ -2,11 +2,15 @@
 
 This is a collection of example programs and tools for the Sharp PC-1251 and EC-125.
 
-**Disclaimer:** None of these files are my own, the original examples are owned by Sharp and Pocket Tools is attributed below.
+_**Disclaimer:** Except for the Audio Adapter, none of these files are my own. The original examples and documents are owned by Sharp and Pocket Tools is attributed below._
 
 More information about this project can be found on my Retro website: [retro.engineer](https://retro.engineer/projects/2021-01-16_Sharp_PC-1251/)
 
-### Audio directory
+## Audio-Adapter directory
+
+This directory contains the designs for the audio adapter PCB which is for sale in my [Tindie shop](https://www.tindie.com/products/22618/). 
+
+## Audio directory
 
 This contains audio recordings of the original example programs provided on the EC-125 micro-cassette, as well as a Dutch game presumably made by a previous owner of my device.
 
@@ -17,6 +21,23 @@ These files can be played back to the PC-1251 using the EC-125 audio-in connecti
 These are the basic files converted from the above audio files using Pocket Tools (see below)
 
 Files A09 and A11 encountered errors during decoding and might not be reliable.
+
+## Manuals directory
+
+User guides:
+
+* Sharp PC-1250 user guide
+* Sharp CE-125 user guide
+
+Service guides:
+
+* Sharp PC-1250 service manual
+* Sharp CE-125 circuit diagrams (very minimal)
+
+Related guides:
+
+* Seiko MTP201 technical reference (Printer used in the CE-125)
+* Sharp CE-126P service manual (contains the same printer as used in the CE-125)
 
 ## EC-125 modification
 
