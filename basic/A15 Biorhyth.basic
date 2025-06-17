@@ -1,5 +1,5 @@
     5 "A": CLEAR : DEGREE : LPRINT ""
-   10 INPUT "NAME="@D$
+   10 INPUT "NAME=";D$
    20 LPRINT "NAME:";D$
    30 INPUT "DATE OF BIRTH:YEAR=";U$,"MONTH=";V,"DAY=";W
    35 F$=STR$ V:G$=STR$ W

@@ -7,7 +7,7 @@
    60 C=A/B:D=A*A/B
    70 USING "########.####"
    80 IF L=0 LPRINT "R= ";B: GOTO 100
-   90 LPRINT "L- ";D
+   90 LPRINT "L= ";D
   100 X=A*C*(1-C^4/40+C^8/3456-C^12/599040)
   110 Y=A*C^3/6*(1-C^4/56+C^8/7040-C^12/161200)
   120 LPRINT "X= ";X: LPRINT "Y= ";Y

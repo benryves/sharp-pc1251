@@ -6,7 +6,7 @@
    60 FOR J=1 TO B
    70 PAUSE "A(";USING "###";I;",";J;")"
    80 INPUT B(I-1,J-1)
-   90 LPRINT "A(";USING "###";I;",";J;")=";USING " CLEAR #########";B(I-1,J-1)
+   90 LPRINT "A(";USING "###";I;",";J;")=";USING "##########";B(I-1,J-1)
   100 NEXT J: NEXT I
   110 GOTO 505
   120 "B": WAIT : USING : LPRINT "* REVISED DATA *"
